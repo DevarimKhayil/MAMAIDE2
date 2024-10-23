@@ -1,0 +1,22 @@
+/* Tailwind base classes are already imported */
+.hero {
+    background-image: url('/images/hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1 1 calc(33.333% - 20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+    transition: transform 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
