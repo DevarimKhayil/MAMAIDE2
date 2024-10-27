@@ -16,4 +16,10 @@ router.get('/contact', (req, res) => {
     res.render('contact');
 });
 
+// Route for dashboard
+router.get('/dashboard', (req, res) => {
+    res.render('dashboard');
+});
+
+
 module.exports = router;

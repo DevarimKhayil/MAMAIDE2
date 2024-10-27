@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/tailwind.css" rel="stylesheet">
+    <title>Dashboard</title>
+</head>
+<body class="bg-gray-100 font-poppins">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-[#2c2c64]">Welcome to Your Dashboard</h1>
+            <a href="/auth/logout" class="text-red-500 hover:text-red-700 font-semibold">Logout</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto py-6 px-4">
+        <section class="mb-8">
+            <h2 class="text-xl font-bold text-[#2c2c64] mb-4">Consultants</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Consultant Card -->
+                <div class="bg-white shadow-lg rounded-lg p-4">
+                    <h3 class="font-semibold text-lg">Dr. Jane Doe</h3>
+                    <p class="text-gray-600">Specialty: Pediatrics</p>
+                    <p class="text-gray-600">Phone: (123) 456-7890</p>
+                    <p class="text-gray-600">Email: jane.doe@example.com</p>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg p-4">
+                    <h3 class="font-semibold text-lg">Dr. John Smith</h3>
+                    <p class="text-gray-600">Specialty: General Medicine</p>
+                    <p class="text-gray-600">Phone: (123) 456-7891</p>
+                    <p class="text-gray-600">Email: john.smith@example.com</p>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg p-4">
+                    <h3 class="font-semibold text-lg">Dr. Emily Johnson</h3>
+                    <p class="text-gray-600">Specialty: Gynecology</p>
+                    <p class="text-gray-600">Phone: (123) 456-7892</p>
+                    <p class="text-gray-600">Email: emily.johnson@example.com</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-xl font-bold text-[#2c2c64] mb-4">Nearby Healthcare Facilities</h2>
+            <ul class="list-disc list-inside">
+                <li class="bg-white shadow-lg rounded-lg p-4 mb-2">City Hospital - (123) 456-7893</li>
+                <li class="bg-white shadow-lg rounded-lg p-4 mb-2">Health Center - (123) 456-7894</li>
+                <li class="bg-white shadow-lg rounded-lg p-4 mb-2">Wellness Clinic - (123) 456-7895</li>
+            </ul>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-xl font-bold text-[#2c2c64] mb-4">Community Outreach Activities</h2>
+            <div class="bg-white shadow-lg rounded-lg p-4 mb-2">
+                <h3 class="font-semibold">Free Health Check-up</h3>
+                <p>Date: November 10, 2024</p>
+                <p>Location: Community Center</p>
+            </div>
+            <div class="bg-white shadow-lg rounded-lg p-4 mb-2">
+                <h3 class="font-semibold">Nutrition Workshop</h3>
+                <p>Date: November 15, 2024</p>
+                <p>Location: Local Library</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-xl font-bold text-[#2c2c64] mb-4">Emergency Hotlines</h2>
+            <ul class="list-disc list-inside">
+                <li class="bg-white shadow-lg rounded-lg p-4 mb-2">Ambulance: 911</li>
+                <li class="bg-white shadow-lg rounded-lg p-4 mb-2">Poison Control: (800) 222-1222</li>
+                <li class="bg-white shadow-lg rounded-lg p-4 mb-2">Mental Health Support: (800) 273-8255</li>
+            </ul>
+        </section>
+    </main>
+
+</body>
+</html>

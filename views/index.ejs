@@ -1,1 +1,236 @@
-<h1>Home Page</h1>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/css/tailwind.css" rel="stylesheet">
+        <title>MAMAIDE</title>
+    </head>
+    <body class="bg-gray-100 font-poppins">
+        <!-----------------------HEADER SECTION --------------------------------->
+        <header class="fixed top-0 left-0 w-full bg-white z-50 py-4 shadow">
+            <div class="container mx-auto flex justify-between items-center px-4 md:px-6">
+               <!-- Logo and Company Name -->
+               <div class="flex items-center space-x-4 cursor-pointer">
+                     <img src="/images/mamaide_logo.png" alt="Cybill Logo" class="h-10 w-auto">
+               </div>
+   
+               <!-- Navigation Links -->
+               <nav class="hidden md:flex space-x-6">
+                     <a href="/" class="text-gray-700 {{ Request::is('/') ? 'font-semibold underline text-[#fc4b3b]' : 'hover:text-[#fc4b3b]' }}">Home</a>
+                     <a href="/about" class="text-gray-700 {{ Request::is('/about') ? 'font-semibold underline text-[#fc4b3b]' : 'hover:text-[#fc4b3b]' }}">About Us</a>
+                     <a href="/products" class="text-gray-700 {{ Request::is('/products') ? 'font-semibold underline text-[#fc4b3b]' : 'hover:text-[#fc4b3b]' }}">Services</a>
+                     <a href="/contact-us" class="text-gray-700 {{ Request::is('/products') ? 'font-semibold underline text-[#fc4b3b]' : 'hover:text-[#fc4b3b]' }}">Contact us</a>
+
+               </nav>
+   
+               <!-- Mobile menu Button to open mobile-menu -->
+               <div class="md:hidden">
+                     <button id="nav-open" class="text-gray-700 focus:outline-none">
+                        <!-- Icon for mobile menu (we are using an SVG) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                     </button>
+               </div>
+   
+               <!-- User Account Section -->
+               <div class="relative hidden md:block">
+                    <div id="user-account-dropdown" class="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg hidden transition-opacity duration-200 ease-in-out">
+                        <div class="py-2">
+                                <a href="/my-account" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors duration-200">My Page</a>
+                                <form action="{{ route('logout') }}" method="POST" class="inline">
+                                <button type="submit" class="w-full text-start px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors duration-200">
+                                    Logout
+                                </button>
+                                </form>
+                                <!-- Add more items as needed -->
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between gap-3">
+                        <a href="/auth/register" class="bg-[#32aa27] hover:bg-[#32aa27]/80 text-white py-2 px-4 rounded-md">
+                            Sign Up
+                        </a>
+                        <a href="/auth/login" class="bg-[#fc4b3b] text-white py-2 px-4 rounded-md hover:bg-[#fc4b3b]/80">
+                            Sign In
+                        </a>
+                    </div>
+               </div>
+   
+               <!--- The mobile menu navigation --->
+               <nav id="mobile-menu" class="fixed top-0 right-[-100%] bg-white w-[80%] h-full shadow-lg p-24 flex flex-col gap-10 transition-all duration-400 ease-in-out z-40">
+                    <button id="nav-close" class="self-end">
+                    <!-- Close icon (you can use an icon library or an SVG here) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                    </button>
+                    <a href="/" class="text-gray-700 hover:text-[#fc4b3b]">Home</a>
+                    <a href="/about" class="text-gray-700 hover:text-[#fc4b3b]">About Us</a>
+                    <a href="/products" class="text-[#fc4b3b] font-semibold">Products</a>
+                    <a href="/contact" class="text-gray-700 hover:text-[#fc4b3b]">Contact Us</a>
+                    <a href="/my-account" class="text-gray-700 font-semibold">My Page</a>
+                    <form action="{{ route('logout') }}" method="POST" class="inline">
+                        <button type="submit" class="text-gray-700 hover:text-[#fc4b3b]">Logout</button>
+                    </form>
+                    <a href="/login" class="bg-[#fc4b3b] text-white py-2 px-4 rounded-md hover:bg-[#fc4b3b]/90">
+                        Sign In
+                    </a>
+               </nav>
+            </div>
+        </header>
+
+        <!-----------------------MAIN SECTION ------------------------------------>
+        <main>
+            <section id="home_image_section" class="relative pb-8 min-h-[560px] flex items-center">
+                <div class="absolute top-0 left-0 right-0 h-[500px]">
+                    <img src="/images/home_page_mother.webp" alt="About Us" class="w-full h-full object-cover" />
+                    <div class="absolute inset-0 bg-black bg-opacity-50 pointer-events-none"></div>
+                </div>
+            
+                <div class="absolute top-[130px] md:top-0 left-0 max-w-7xl mx-auto px-6 sm:py-32 lg:px-6 lg:py-30 z-10 flex flex-col items-startr">
+                    <h1 class="mt-10 mb-10 md:mb-0 max-w-lg text-4xl font-bold tracking-tight text-white sm:text-6xl">
+                        Mamaide
+                    </h1>
+                    <p class="text-xl md:text-3xl text-white font-normal font-poppins leading-5 mb-2.5">Crafting a mother's perfect aide</p>
+                    <div class="mt-10 flex items-center gap-x-6">            
+                        <!-- Always show Learn More button -->
+                        <button class="block bg-[#32aa27] rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#fc4b3b]/90 focus-visible:outline">
+                            <a href="#" class="no-underline">
+                                <span class="text-sm leading-6">
+                                    View Services
+                                </span>
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <div class="flex flex-col md:flex-row items-center justify-between p-6 bg-gray-100">
+                <div class="md:w-1/2 pr-5">
+                    <h2 class="text-lg md:text-xl text-[#32aa27] font-semibold mb-4 uppercase">Empowering Women's Health</h2>
+                    <p class="text-md md:text-4xl mb-4 font-semibold text-black">
+                        Providing personalized maternal health information and support
+                    </p>
+                    <p class="text-sm md:text-xl text-black mb-4 md:text-gray-500 font-poppins">
+                        Mamaide is a maternal health project in Nairobi, designed to provide personalized maternal health information for women aged 15-49, simplify referrals, and offer community outreach and centralized risk stratification. Our goal is to improve maternal health outcomes by empowering women with the right information and support.
+                    </p>
+                    <a href="#" class="text-blue-600 hover:underline">Get in touch</a>
+                </div>
+                <div class="md:w-1/2 mt-5">
+                    <img src="/images/home_page_mother2.jpg" alt="Description of image" class="w-full h-auto rounded-lg" />
+                </div>
+            </div>
+            <!----------------Cards section --------------------------------------->
+            <section class="p-6 md:p-10 bg-gray-50">
+                <div class="flex items-center justify-center">
+                    <h2 class="text-2xl font-semibold text-center mb-8 bg-[#fc4b3b] w-auto py-2 px-3 rounded-md">Our Services</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Card 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105">
+                        <img src="/images/card1.jpeg" alt="Service 1" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Personalized Maternal Health Information</h3>
+                            <p class="text-gray-600">
+                                Get personalized guidance on maternal health.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105">
+                        <img src="/images/card2.jpg" alt="Service 2" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Simplified Referrals</h3>
+                            <p class="text-gray-600">
+                                Effortlessly navigate through referrals.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105">
+                        <img src="/images/card3.png" alt="Service 3" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Community Outreach</h3>
+                            <p class="text-gray-600">
+                                Engage with the community for support.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105">
+                        <img src="/images/card4.jpeg" alt="Service 4" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Centralized Risk Stratification</h3>
+                            <p class="text-gray-600">
+                                Identify potential risks effectively.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105">
+                        <img src="/images/card5.jpeg" alt="Service 5" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Empowerment Through Information</h3>
+                            <p class="text-gray-600">
+                                Gain empowerment through knowledge.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105">
+                        <img src="/images/card6.jpeg" alt="Service 6" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Support and Guidance</h3>
+                            <p class="text-gray-600">
+                                Receive personalized support and guidance.
+                        </div>
+                    </div>
+                </div>
+            </section>                      
+        </main>
+
+        <!-----------------------FOOTER SECTION ---------------------------------->
+        <footer class="bg-gray-800 text-white p-6 md:p-10">
+            <div class="container mx-auto">
+                <div class="flex flex-col md:flex-row justify-between">
+                    <div class="mb-6 md:mb-0">
+                        <h2 class="text-2xl font-semibold mb-2">Mamaide</h2>
+                        <p class="text-gray-400">
+                            Empowering women's health through personalized maternal health information and support.
+                        </p>
+                    </div>
+                    <div class="mb-6 md:mb-0">
+                        <h3 class="text-lg font-semibold mb-2">Quick Links</h3>
+                        <ul>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Services</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="mb-6 md:mb-0">
+                        <h3 class="text-lg font-semibold mb-2">Contact Us</h3>
+                        <p class="text-gray-400">Email: info@mamaide.org</p>
+                        <p class="text-gray-400">Phone: +254 700 000 000</p>
+                        <p class="text-gray-400">Location: Nairobi, Kenya</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-gray-400 mt-6">
+                <p>&copy; 2024 Mamaide. All rights reserved.</p>
+            </div>
+        </footer>        
+    </body>
+</html>
