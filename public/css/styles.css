@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-
+/* Tailwind cy cript log */
 /* Tailwind base classes are already imported */
 .hero {
     background-image: url('/images/hero-image.jpg');
