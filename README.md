@@ -26,8 +26,8 @@ File Structure
 └── README.md            # Documentation file (this file)
 
 Authors
-- **Nicholus Albert**
-- **Brian Wachira**
+- Nicholus Albert - minicholus@gmail.com
+- Brian Wachira - wachirabriangeita@gmail.com
 
 How to Use
 1. Clone the repository:
