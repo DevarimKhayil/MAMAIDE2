@@ -1,3 +1,5 @@
+// Implement user authentication with registration, login, and logout routes
+// Import required modules and initialize router
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
