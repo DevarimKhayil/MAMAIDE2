@@ -17,6 +17,7 @@ router.get('/contact', (req, res) => {
 });
 
 // Route for dashboard
+// Get consults and important programs
 router.get('/dashboard', (req, res) => {
     res.render('dashboard');
 });
