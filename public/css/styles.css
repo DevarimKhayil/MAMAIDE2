@@ -4,7 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-/* Tailwind base classes are already imported */
+/* Tailwind base classes are already imported here */
 .hero {
     background-image: url('/images/hero-image.jpg');
     background-size: cover;
